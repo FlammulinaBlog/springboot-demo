@@ -1,6 +1,7 @@
 package com.springboot.controller;
 
 import lombok.extern.slf4j.Slf4j;
+import org.apache.kafka.clients.consumer.Consumer;
 import org.apache.kafka.clients.consumer.ConsumerRecord;
 import org.springframework.kafka.annotation.KafkaListener;
 import org.springframework.stereotype.Component;
@@ -16,7 +17,6 @@ import java.util.Optional;
 @Component
 public class kafkaConsumer {
 
-    @KafkaListener(topics = {"test1"})
     public void listen(ConsumerRecord<?, ?> record) {
         Optional<?> optional = Optional.ofNullable( record.value() );
         if (optional.isPresent()) {
@@ -26,9 +26,11 @@ public class kafkaConsumer {
         }
     }
 
-    @KafkaListener(topics = {"test"})
-    public void listenTest (ConsumerRecord<?, ?> record){
+    @KafkaListener(topics = {"${kafka.topic.name}"})
+    public void listenTest (ConsumerRecord<?, ?> record, Consumer consumer){
+        consumer.commitSync();
         System.out.printf("topic is %s, offset is %d, value is %s \n", record.topic(), record.offset(), record.value());
+
     }
 
 }

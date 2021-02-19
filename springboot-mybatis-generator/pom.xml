@@ -51,6 +51,13 @@
                         <artifactId>mssql-jdbc</artifactId>
                         <version>6.1.0.jre8</version>
                     </dependency>
+
+                    <!-- pgsql-->
+                    <dependency>
+                        <groupId>org.postgresql</groupId>
+                        <artifactId>postgresql</artifactId>
+                        <version>42.2.8.jre6</version>
+                    </dependency>
                 </dependencies>
             </plugin>
         </plugins>

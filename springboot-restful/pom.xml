@@ -55,5 +55,29 @@
             <artifactId>junit</artifactId>
             <version>4.12</version>
         </dependency>
+
+        <dependency>
+            <groupId>com.alibaba</groupId>
+            <artifactId>fastjson</artifactId>
+            <version>1.2.75</version>
+        </dependency>
+
+        <!--   taobao-sdk-java-auto_1611137683514-20210120  /-->
+        <dependency>
+            <groupId>taobao-sdk-java-auto</groupId>
+            <artifactId>1611137683514</artifactId>
+            <version>202010120</version>
+            <!--<scope>system</scope>-->
+            <!--<systemPath>${project.basedir}/lib/taobao-sdk-java-auto_1611137683514-20210120.jar</systemPath>-->
+        </dependency>
+
+        <dependency>
+            <groupId>taobao-sdk-java-auto</groupId>
+            <artifactId>1611137683514-20210120-source</artifactId>
+            <version>202010120-source</version>
+            <!--<scope>system</scope>-->
+            <!--<systemPath>${project.basedir}/lib/taobao-sdk-java-auto_1611137683514-20210120-source.jar</systemPath>-->
+        </dependency>
+
     </dependencies>
 </project>
